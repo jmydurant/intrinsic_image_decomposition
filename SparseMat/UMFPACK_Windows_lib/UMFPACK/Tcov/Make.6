@@ -1,0 +1,17 @@
+#===============================================================================
+# BLAS, do not test for integer overflow.  No timers
+#===============================================================================
+
+CC = gcc
+CF = -O0 -g -ftest-coverage -fprofile-arcs -O0
+UMFPACK_CONFIG = -DTESTING -DNO_TIMER
+LIB = -lblas -lgfortran -lgfortranbegin -lm
+
+RANLIB = ranlib
+MV = mv -f
+MEX = mex -inline -g
+ARCHIVE = ar rv
+
+#===============================================================================
+
+CLEAN = *.o *.obj *.ln *.bb *.bbg *.da *.c.tcov *.c.gcov gmon.out
